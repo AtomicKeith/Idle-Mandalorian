@@ -1,14 +1,34 @@
 $(document).ready(function(){
     var logs = 0;
+    var stone = 0;
+    var pickaxes = 0;
     var money = 0;
     var logPlus = 1;
+    var stonePlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
+    var pickaxePrice = 50;
     var logPrice = 1;
     var menu;
 
+    setInterval(function(){
+        logs += autoLogPlus;
+        changeInventory();
+        changeMarket();
+    }, 1000);
+
     $("#chop").click(function(){
         logs += logPlus;
+        changeInventory();
+        changeMarket();
+    });
+
+    $("#mine").click(function(){
+        if(pickaxes > 0){
+            stone += stonePlus;
+        }else{
+            alert("You need a pickaxe to mine stone!")
+        };
         changeInventory();
         changeMarket();
     });
@@ -53,6 +73,20 @@ $(document).ready(function(){
         changeMarket();
     });
 
+    $("#autoChopper").click(function(){
+        money -= autoChopperPrice;
+        autoLogPlus += 1;
+        changeInventory();
+        changeMarket();
+    });
+
+    $("#buyPickaxe").click(function(){
+        money -= pickaxePrice;
+        pickaxes += 1;
+        changeInventory();
+        changeMarket();
+    });
+
     $("#return").click(function(){
         menu = switchMenu("main");
     });
@@ -64,6 +98,18 @@ $(document).ready(function(){
             $("#logs").html("You now own " + logs + " log.");
         }else{
             $("#logs").html("You now own " + logs + " logs.");
+        };
+
+        if(pickaxes == 1){
+            $("#pickaxes").html("You now own " + pickaxes + " pickaxe.");
+        }else if(pickaxes > 1){
+            $("#pickaxes").html("You now own " + pickaxes + " pickaxes.");
+        };
+
+        if(stone == 1){
+            $("#stone").html("You now own " + stone + " stone.");
+        }else if(stone > 1){
+            $("#stone").html("You now own " + stone + " stones.");
         };
     }
 
@@ -92,6 +138,17 @@ $(document).ready(function(){
             $("#sell1000").css("display", "block");
         }else{
             $("#sell1000").css("display", "none");
+        }
+
+        if(money >= autoChopperPrice){
+            $("#autoChopper").css("display", "block");
+        }else{
+            $("#autoChopper").css("display", "none");
+        }
+        if(money >= pickaxePrice){
+            $("#buyPickaxe").css("display", "block");
+        }else{
+            $("#buyPickaxe").css("display", "none");
         }
     }
 
