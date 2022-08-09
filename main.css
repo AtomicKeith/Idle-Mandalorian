@@ -10,7 +10,7 @@
 
 .sellButtons {
     display: grid;
-    grid-template-columns: repeat(4, 72px);
+    grid-template-columns: repeat(5, 72px);
     margin-bottom: 10px;
 }
 
