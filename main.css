@@ -1,8 +1,21 @@
-.inventory {
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body, .tooltip {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+/* .inventory {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+} */
 
 .marketplace {
     display: none;
@@ -23,4 +36,11 @@
 button {
     background-color: white;
     font-size: 18px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #666;
 }

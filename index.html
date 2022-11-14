@@ -3,49 +3,68 @@
 
 <head>
     <title>Idle Mandalorian</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="app.js"></script>
 </head>
 
 <body>
-    <div class="content">
-        <div class="menus">
-            <div class="main">
-                <button id="chop">Chop Log</button>
-                <button id="mine">Mine for Stone</button>
-                <button id="visit">Visit Marketplace</button>
-            </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-3">
+                    <div class="log">
 
-            <div class="marketplace">
-                <div class="sellButtons">
-                    <button id="sell1">Sell [1] Log</button>
-                    <button id="sell10">Sell [10] Logs</button>
-                    <button id="sell100">Sell [100] Logs</button>
-                    <button id="sell1000">Sell [1k] Logs</button>
-                    <button id="sellAll">Sell All Logs</button>
+                    </div>
                 </div>
+                <div class="col-6">
+                    <div class="menus">
+                        <div class="razorCrest">
+                            <button id="chop">Chop Log</button>
+                            <button id="mine">Mine for Stone</button>
+                            <button id="visit">Visit Marketplace</button>
+                        </div>
 
-                <div class="upgrades">
-                    <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
+                        <div class="marketplace">
+                            <div class="sellButtons">
+                                <button id="sell1">Sell [1] Log</button>
+                                <button id="sell10">Sell [10] Logs</button>
+                                <button id="sell100">Sell [100] Logs</button>
+                                <button id="sell1000">Sell [1k] Logs</button>
+                                <button id="sellAll">Sell All Logs</button>
+                            </div>
+
+                            <div class="upgrades">
+                                <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
+                            </div>
+
+                            <div class="items">
+                                <button id="buyPickaxe">Buy [1] Pickaxe ($50)</button>
+                            </div>
+
+                            <button id="return">Return</button>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="items">
-                    <button id="buyPickaxe">Buy [1] Pickaxe ($50)</button>
+                <div class="col-3">
+                    <div class="inventory">
+                        <p id="money">Money: $0</p>
+                        <p id="logs">Logs: 0</p>
+                        <p id="stone"></p>
+                        <p id="pickaxes"></p>
+                    </div>
                 </div>
-
-                <button id="return">Return</button>
             </div>
         </div>
-
-        <div class="inventory">
-            <p id="money">Money: $0</p>
-            <p id="logs">You now own 0 logs.</p>
-            <p id="pickaxes"></p>
-            <p id="stone"></p>
-        </div>
+        <div class="col-3"></div>
     </div>
+    <footer>
+        <p>Copyright &copy; 2022, AtomicKeith. All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>
